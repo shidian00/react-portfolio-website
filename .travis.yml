@@ -1,0 +1,9 @@
+language: node_js
+services:
+  - docker
+
+before_install:
+  - docker build -t foo/reactapp -f Dockerfil.dev .
+
+scripts:
+  - docker run foo/reactapp npm run test -- --coverage
